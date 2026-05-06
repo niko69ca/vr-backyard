@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Niko Outdoor Kitchen VR Walkthrough - Meta Quest</title>
+  <meta name="description" content="WebXR VR walkthrough for Meta Quest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    #note {
+      position: fixed;
+      left: 12px;
+      bottom: 12px;
+      z-index: 10;
+      background: rgba(0,0,0,.72);
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 10px;
+      max-width: 430px;
+      line-height: 1.35;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div id="note">
+  <b>Meta Quest VR Walkthrough</b><br>
+  Open this page in the Meta Quest Browser, then press <b>Enter VR</b>.<br>
+  Use the thumbstick to walk. This is a first draft model for layout visualization.
+</div>
+
+<a-scene background="color: #dfeaf2" renderer="antialias: true" xr-mode-ui="enabled: true">
+  <a-assets>
+    <img id="wood" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+  </a-assets>
+
+  <!-- Lights -->
+  <a-entity light="type: ambient; intensity: 0.55"></a-entity>
+  <a-entity light="type: directional; intensity: 0.85" position="3 7 5"></a-entity>
+
+  <!-- Ground / backyard floor -->
+  <a-plane position="0 0 0" rotation="-90 0 0" width="26" height="24" color="#b9b5aa"></a-plane>
+
+  <!-- Back walls -->
+  <a-box position="0 1.5 -7.5" width="22" height="3" depth="0.25" color="#d6d0c3"></a-box>
+  <a-box position="-8.5 1.5 0" width="0.25" height="3" depth="16" color="#d6d0c3"></a-box>
+
+  <!-- Wood accent back panels -->
+  <a-box position="1 1.55 -7.34" width="14" height="2.35" depth="0.08" color="#8b5a3c"></a-box>
+  <a-box position="-8.34 1.55 -1" width="0.08" height="2.35" depth="11" color="#8b5a3c"></a-box>
+
+  <!-- L-shaped counters: scaled 1 unit = 1 foot -->
+  <!-- Long arm 16 ft -->
+  <a-box position="1.5 0.45 -6.3" width="16" height="0.9" depth="2.2" color="#66615a"></a-box>
+  <a-box position="1.5 0.95 -6.3" width="16.2" height="0.18" depth="2.35" color="#2f2f2f"></a-box>
+
+  <!-- Short arm 14 ft -->
+  <a-box position="-7.0 0.45 -0.5" width="2.2" height="0.9" depth="14" color="#66615a"></a-box>
+  <a-box position="-7.0 0.95 -0.5" width="2.35" height="0.18" depth="14.2" color="#2f2f2f"></a-box>
+
+  <!-- 3x3 pizza oven at L corner -->
+  <a-cylinder position="-6.9 1.45 -6.25" radius="1.45" height="1.25" theta-start="0" theta-length="180" rotation="0 90 0" color="#b65f3a"></a-cylinder>
+  <a-box position="-6.9 0.8 -6.25" width="3" height="1.2" depth="3" color="#a9472f"></a-box>
+  <a-text value="3' x 3' Pizza Oven Corner" position="-6.9 2.45 -6.25" rotation="0 45 0" align="center" color="#111" width="4"></a-text>
+
+  <!-- Persian manghal BBQ -->
+  <a-box position="0.2 1.18 -6.0" width="4" height="0.35" depth="1.25" color="#1f1f1f"></a-box>
+  <a-box position="0.2 0.72 -6.0" width="4.2" height="0.9" depth="1.45" color="#7a4a32"></a-box>
+  <a-text value="4' Persian Manghal BBQ" position="0.2 1.85 -5.15" align="center" color="#111" width="4"></a-text>
+
+  <!-- Gas BBQ -->
+  <a-box position="4.6 1.12 -6.0" width="3.2" height="0.28" depth="1.2" color="#222"></a-box>
+  <a-box position="4.6 1.45 -6.0" width="3" height="0.65" depth="1.2" color="#3c3c3c"></a-box>
+  <a-text value="Gas BBQ" position="4.6 2.05 -5.15" align="center" color="#111" width="3"></a-text>
+
+  <!-- Sink on short arm -->
+  <a-box position="-7.0 1.08 0.5" width="1.4" height="0.08" depth="1.7" color="#cfd2d4"></a-box>
+  <a-cylinder position="-7.0 1.25 0.5" radius="0.16" height="0.7" color="#cfd2d4"></a-cylinder>
+  <a-text value="Sink" position="-5.65 1.75 0.5" rotation="0 -90 0" align="center" color="#111" width="3"></a-text>
+
+  <!-- Mini fridge -->
+  <a-box position="-7.0 0.55 3.4" width="1.55" height="1.05" depth="1.45" color="#202a33"></a-box>
+  <a-box position="-6.98 0.58 3.4" width="1.58" height="0.88" depth="0.05" color="#d9e1e7"></a-box>
+  <a-text value="Mini Fridge" position="-5.65 1.45 3.4" rotation="0 -90 0" align="center" color="#111" width="3"></a-text>
+
+  <!-- Pergola posts -->
+  <a-box position="-8 2.1 -7" width="0.28" height="4.2" depth="0.28" color="#4d3b2f"></a-box>
+  <a-box position="8 2.1 -7" width="0.28" height="4.2" depth="0.28" color="#4d3b2f"></a-box>
+  <a-box position="-8 2.1 6" width="0.28" height="4.2" depth="0.28" color="#4d3b2f"></a-box>
+  <a-box position="8 2.1 6" width="0.28" height="4.2" depth="0.28" color="#4d3b2f"></a-box>
+
+  <!-- Pergola beams -->
+  <a-box position="0 4.2 -7" width="16.8" height="0.25" depth="0.35" color="#4d3b2f"></a-box>
+  <a-box position="0 4.2 6" width="16.8" height="0.25" depth="0.35" color="#4d3b2f"></a-box>
+  <a-box position="-8 4.2 -0.5" width="0.35" height="0.25" depth="13.3" color="#4d3b2f"></a-box>
+  <a-box position="8 4.2 -0.5" width="0.35" height="0.25" depth="13.3" color="#4d3b2f"></a-box>
+  <a-box position="-5 4.35 -0.5" width="0.18" height="0.18" depth="13" color="#6a513e"></a-box>
+  <a-box position="-2 4.35 -0.5" width="0.18" height="0.18" depth="13" color="#6a513e"></a-box>
+  <a-box position="1 4.35 -0.5" width="0.18" height="0.18" depth="13" color="#6a513e"></a-box>
+  <a-box position="4 4.35 -0.5" width="0.18" height="0.18" depth="13" color="#6a513e"></a-box>
+
+  <!-- Dining / seating area -->
+  <a-box position="2.2 0.45 2.4" width="5.8" height="0.18" depth="2.5" color="#6b4d35"></a-box>
+  <a-box position="0.2 0.25 4.2" width="2.2" height="0.2" depth="0.8" color="#565656"></a-box>
+  <a-box position="2.2 0.25 4.2" width="2.2" height="0.2" depth="0.8" color="#565656"></a-box>
+  <a-box position="4.2 0.25 4.2" width="2.2" height="0.2" depth="0.8" color="#565656"></a-box>
+  <a-text value="Permanent Dining Area" position="2.2 1.15 2.4" align="center" color="#111" width="5"></a-text>
+
+  <!-- Dimension labels -->
+  <a-text value="16' Long Arm" position="1.5 1.45 -7.6" align="center" color="#111" width="5"></a-text>
+  <a-text value="14' Short Arm" position="-8.45 1.45 -0.5" rotation="0 -90 0" align="center" color="#111" width="5"></a-text>
+  <a-text value="Walkthrough / Contractor Layout Draft" position="0 3.2 4.8" align="center" color="#111" width="7"></a-text>
+
+  <!-- Camera / player -->
+  <a-entity id="rig" position="2 1.6 6">
+    <a-camera wasd-controls-enabled="true" look-controls="pointerLockEnabled: true"></a-camera>
+    <a-entity oculus-touch-controls="hand: left"></a-entity>
+    <a-entity oculus-touch-controls="hand: right"></a-entity>
+  </a-entity>
+</a-scene>
+</body>
+</html>
