@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Niko Backyard Outdoor Kitchen - Meta Quest VR</title>
+<meta name="description" content="Interactive WebXR VR walkthrough for Meta Quest">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; }
+  #instructions {
+    position: fixed;
+    left: 14px;
+    bottom: 14px;
+    z-index: 10;
+    background: rgba(0,0,0,0.72);
+    color: white;
+    padding: 12px 14px;
+    border-radius: 10px;
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+<div id="instructions">
+  <b>Meta Quest VR Backyard Walkthrough</b><br>
+  Upload this file as <b>index.html</b> to GitHub Pages or Netlify.<br>
+  Open the link in Meta Quest Browser, then press <b>Enter VR</b>.<br>
+  Left thumbstick moves. Turn your head to look around.
+</div>
+
+<a-scene
+  background="color: #0d1b2a"
+  renderer="antialias: true; colorManagement: true"
+  xr-mode-ui="enabled: true"
+  fog="type: exponential; color: #0d1b2a; density: 0.018">
+
+  <!-- Assets -->
+  <a-assets>
+    <a-mixin id="stone" material="color: #8c7a63; roughness: 0.95"></a-mixin>
+    <a-mixin id="darkStone" material="color: #5f5141; roughness: 1"></a-mixin>
+    <a-mixin id="countertop" material="color: #c9bea9; roughness: 0.55; metalness: 0.05"></a-mixin>
+    <a-mixin id="steel" material="color: #b7bec4; metalness: 0.85; roughness: 0.25"></a-mixin>
+    <a-mixin id="wood" material="color: #6b4328; roughness: 0.75"></a-mixin>
+  </a-assets>
+
+  <!-- Lighting -->
+  <a-entity light="type: ambient; intensity: 0.32; color: #9fb8ff"></a-entity>
+  <a-entity light="type: directional; intensity: 0.25; color: #ffe1b5" position="-4 7 5"></a-entity>
+
+  <!-- Ground concrete patio -->
+  <a-plane position="0 0 0" rotation="-90 0 0" width="42" height="36" color="#777066" material="roughness: 0.9"></a-plane>
+  <a-plane position="0 0.01 -1" rotation="-90 0 0" width="18" height="16" color="#887c6e" material="roughness: 0.85"></a-plane>
+
+  <!-- Expansion lines in concrete -->
+  <a-box position="0 0.025 -1" width="0.025" height="0.025" depth="16" color="#554f48"></a-box>
+  <a-box position="-6 0.025 -1" width="0.025" height="0.025" depth="16" color="#554f48"></a-box>
+  <a-box position="6 0.025 -1" width="0.025" height="0.025" depth="16" color="#554f48"></a-box>
+  <a-box position="0 0.025 -4" width="18" height="0.025" depth="0.025" color="#554f48"></a-box>
+  <a-box position="0 0.025 3" width="18" height="0.025" depth="0.025" color="#554f48"></a-box>
+
+  <!-- Existing backyard walls / fences based on user photo -->
+  <a-box position="0 2 -9.2" width="22" height="4" depth="0.25" color="#8d806e"></a-box>
+  <a-box position="-10.9 2 -1" width="0.25" height="4" depth="16" color="#7f7566"></a-box>
+  <a-box position="10.9 2 -1" width="0.25" height="4" depth="16" color="#6a4b35"></a-box>
+
+  <!-- Block pattern on rear wall -->
+  <a-entity>
+    <a-box position="-8 2.1 -9.04" width="0.04" height="3.3" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="-4 2.1 -9.04" width="0.04" height="3.3" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="0 2.1 -9.04" width="0.04" height="3.3" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="4 2.1 -9.04" width="0.04" height="3.3" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="8 2.1 -9.04" width="0.04" height="3.3" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="0 1.2 -9.03" width="22" height="0.035" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="0 2.0 -9.03" width="22" height="0.035" depth="0.04" color="#5e554b"></a-box>
+    <a-box position="0 2.8 -9.03" width="22" height="0.035" depth="0.04" color="#5e554b"></a-box>
+  </a-entity>
+
+  <!-- Wood fence slats right side -->
+  <a-entity>
+    <a-box position="10.75 2 -7" width="0.08" height="3.6" depth="0.08" color="#4c3426"></a-box>
+    <a-box position="10.75 2 -5.9" width="0.08" height="3.6" depth="0.08" color="#7b5a42"></a-box>
+    <a-box position="10.75 2 -4.8" width="0.08" height="3.6" depth="0.08" color="#4c3426"></a-box>
+    <a-box position="10.75 2 -3.7" width="0.08" height="3.6" depth="0.08" color="#7b5a42"></a-box>
+    <a-box position="10.75 2 -2.6" width="0.08" height="3.6" depth="0.08" color="#4c3426"></a-box>
+    <a-box position="10.75 2 -1.5" width="0.08" height="3.6" depth="0.08" color="#7b5a42"></a-box>
+    <a-box position="10.75 2 -0.4" width="0.08" height="3.6" depth="0.08" color="#4c3426"></a-box>
+    <a-box position="10.75 2 0.7" width="0.08" height="3.6" depth="0.08" color="#7b5a42"></a-box>
+    <a-box position="10.75 2 1.8" width="0.08" height="3.6" depth="0.08" color="#4c3426"></a-box>
+  </a-entity>
+
+  <!-- L-shaped stone outdoor kitchen -->
+  <!-- Long arm 16' -->
+  <a-box mixin="stone" position="-1.5 0.55 -7.35" width="16" height="1.1" depth="2.1"></a-box>
+  <a-box mixin="countertop" position="-1.5 1.18 -7.35" width="16.3" height="0.22" depth="2.35"></a-box>
+  <!-- Short arm 14' -->
+  <a-box mixin="stone" position="7.45 0.55 -1.45" width="2.1" height="1.1" depth="14"></a-box>
+  <a-box mixin="countertop" position="7.45 1.18 -1.45" width="2.35" height="0.22" depth="14.3"></a-box>
+
+  <!-- More stone block detail -->
+  <a-box position="-1.5 0.95 -6.25" width="15.5" height="0.04" depth="0.04" color="#4f4337"></a-box>
+  <a-box position="-1.5 0.45 -6.25" width="15.5" height="0.04" depth="0.04" color="#4f4337"></a-box>
+  <a-box position="6.3 0.95 -1.45" width="0.04" height="0.04" depth="13.6" color="#4f4337"></a-box>
+  <a-box position="6.3 0.45 -1.45" width="0.04" height="0.04" depth="13.6" color="#4f4337"></a-box>
+
+  <!-- Pizza oven at true corner -->
+  <a-box mixin="stone" position="5.45 0.75 -7.35" width="3.1" height="1.4" depth="2.9"></a-box>
+  <a-box mixin="countertop" position="5.45 1.42 -7.35" width="3.3" height="0.18" depth="3.1"></a-box>
+  <a-sphere position="5.45 2.0 -7.35" radius="1.15" scale="1 0.75 1" color="#9f8f78" material="roughness: 0.9"></a-sphere>
+  <a-box position="5.45 1.72 -6.34" width="1.4" height="0.75" depth="0.1" color="#1b120d"></a-box>
+  <a-cone position="5.45 2.9 -7.35" radius-bottom="0.32" radius-top="0.16" height="1.0" color="#222"></a-cone>
+  <a-entity light="type: point; intensity: 1.7; distance: 6; color: #ff8b35" position="5.45 1.75 -6.55"></a-entity>
+  <a-cone position="5.45 1.72 -6.48" radius-bottom="0.35" radius-top="0.02" height="0.7" color="#ff6a00" rotation="0 0 0"></a-cone>
+  <a-cone position="5.25 1.68 -6.45" radius-bottom="0.22" radius-top="0.02" height="0.55" color="#ffd164"></a-cone>
+
+  <!-- Persian manghal / charcoal BBQ -->
+  <a-box position="-2.8 1.35 -7.12" width="4.2" height="0.35" depth="1.25" color="#1a1715"></a-box>
+  <a-box position="-2.8 1.05 -7.12" width="4.4" height="0.55" depth="1.45" color="#9a5b35"></a-box>
+  <a-box position="-2.8 1.56 -7.1" width="4.0" height="0.04" depth="1.0" color="#222"></a-box>
+  <!-- kabob skewers -->
+  <a-cylinder position="-4.1 1.62 -7.1" radius="0.025" height="1.25" rotation="90 0 90" color="#d5d5d5"></a-cylinder>
+  <a-cylinder position="-3.4 1.62 -7.1" radius="0.025" height="1.25" rotation="90 0 90" color="#d5d5d5"></a-cylinder>
+  <a-cylinder position="-2.7 1.62 -7.1" radius="0.025" height="1.25" rotation="90 0 90" color="#d5d5d5"></a-cylinder>
+  <a-cylinder position="-2.0 1.62 -7.1" radius="0.025" height="1.25" rotation="90 0 90" color="#d5d5d5"></a-cylinder>
+  <a-sphere position="-4.1 1.68 -7.08" radius="0.13" color="#b54a2c"></a-sphere>
+  <a-sphere position="-3.4 1.68 -7.08" radius="0.13" color="#d0893f"></a-sphere>
+  <a-sphere position="-2.7 1.68 -7.08" radius="0.13" color="#b54a2c"></a-sphere>
+  <a-sphere position="-2.0 1.68 -7.08" radius="0.13" color="#d0893f"></a-sphere>
+
+  <!-- Gas BBQ -->
+  <a-box mixin="steel" position="7.42 1.47 -0.2" width="1.65" height="0.72" depth="3.6"></a-box>
+  <a-box mixin="steel" position="7.42 1.8 -0.2" width="1.75" height="0.72" depth="3.55" rotation="0 0 0"></a-box>
+  <a-cylinder mixin="steel" position="6.55 1.75 -0.2" radius="0.08" height="3.4" rotation="90 0 0"></a-cylinder>
+  <a-cylinder position="6.5 1.25 -1.0" radius="0.09" height="0.05" rotation="0 90 0" color="#222"></a-cylinder>
+  <a-cylinder position="6.5 1.25 -0.35" radius="0.09" height="0.05" rotation="0 90 0" color="#222"></a-cylinder>
+  <a-cylinder position="6.5 1.25 0.3" radius="0.09" height="0.05" rotation="0 90 0" color="#222"></a-cylinder>
+  <a-cylinder position="6.5 1.25 0.95" radius="0.09" height="0.05" rotation="0 90 0" color="#222"></a-cylinder>
+
+  <!-- Sink and faucet -->
+  <a-box position="7.42 1.31 -3.8" width="1.35" height="0.08" depth="1.75" color="#111"></a-box>
+  <a-box mixin="steel" position="7.42 1.34 -3.8" width="1.05" height="0.08" depth="1.35"></a-box>
+  <a-cylinder mixin="steel" position="7.42 1.76 -3.8" radius="0.045" height="0.75"></a-cylinder>
+  <a-torus mixin="steel" position="7.42 2.08 -3.55" radius="0.27" radius-tubular="0.035" rotation="90 0 0"></a-torus>
+
+  <!-- Mini fridge -->
+  <a-box mixin="steel" position="2.75 0.74 -6.2" width="1.2" height="1.1" depth="0.15"></a-box>
+  <a-box position="2.75 0.74 -6.12" width="0.95" height="0.8" depth="0.08" color="#1d2024"></a-box>
+  <a-box position="2.75 0.74 -6.07" width="0.65" height="0.55" depth="0.05" color="#213625" opacity="0.75"></a-box>
+
+  <!-- Doors / storage -->
+  <a-box mixin="steel" position="-7.1 0.58 -6.2" width="1.35" height="0.8" depth="0.08"></a-box>
+  <a-box mixin="steel" position="-5.4 0.58 -6.2" width="1.35" height="0.8" depth="0.08"></a-box>
+  <a-box mixin="steel" position="-2.8 0.58 -6.2" width="2.4" height="0.8" depth="0.08"></a-box>
+  <a-box mixin="steel" position="5.45 0.58 -6.2" width="1.1" height="0.8" depth="0.08"></a-box>
+  <a-box mixin="steel" position="6.28 0.58 -3.8" width="0.08" height="0.8" depth="1.1"></a-box>
+  <a-box mixin="steel" position="6.28 0.58 0.0" width="0.08" height="0.8" depth="1.8"></a-box>
+
+  <!-- Pergola posts and beams -->
+  <a-box mixin="wood" position="-8.7 2.2 -8.4" width="0.35" height="4.4" depth="0.35"></a-box>
+  <a-box mixin="wood" position="8.7 2.2 -8.4" width="0.35" height="4.4" depth="0.35"></a-box>
+  <a-box mixin="wood" position="-8.7 2.2 5.8" width="0.35" height="4.4" depth="0.35"></a-box>
+  <a-box mixin="wood" position="8.7 2.2 5.8" width="0.35" height="4.4" depth="0.35"></a-box>
+  <a-box mixin="wood" position="0 4.25 -8.4" width="18" height="0.35" depth="0.45"></a-box>
+  <a-box mixin="wood" position="0 4.25 5.8" width="18" height="0.35" depth="0.45"></a-box>
+  <a-box mixin="wood" position="-8.7 4.25 -1.3" width="0.45" height="0.35" depth="14.5"></a-box>
+  <a-box mixin="wood" position="8.7 4.25 -1.3" width="0.45" height="0.35" depth="14.5"></a-box>
+  <a-box mixin="wood" position="-6 4.55 -1.3" width="0.18" height="0.24" depth="14.2"></a-box>
+  <a-box mixin="wood" position="-3 4.55 -1.3" width="0.18" height="0.24" depth="14.2"></a-box>
+  <a-box mixin="wood" position="0 4.55 -1.3" width="0.18" height="0.24" depth="14.2"></a-box>
+  <a-box mixin="wood" position="3 4.55 -1.3" width="0.18" height="0.24" depth="14.2"></a-box>
+  <a-box mixin="wood" position="6 4.55 -1.3" width="0.18" height="0.24" depth="14.2"></a-box>
+
+  <!-- String lights -->
+  <a-entity>
+    <a-sphere position="-6 4.0 -3.2" radius="0.12" color="#ffd98a" material="emissive: #ffb347; emissiveIntensity: 1.5"></a-sphere>
+    <a-sphere position="-3 4.0 -3.2" radius="0.12" color="#ffd98a" material="emissive: #ffb347; emissiveIntensity: 1.5"></a-sphere>
+    <a-sphere position="0 4.0 -3.2" radius="0.12" color="#ffd98a" material="emissive: #ffb347; emissiveIntensity: 1.5"></a-sphere>
+    <a-sphere position="3 4.0 -3.2" radius="0.12" color="#ffd98a" material="emissive: #ffb347; emissiveIntensity: 1.5"></a-sphere>
+    <a-sphere position="6 4.0 -3.2" radius="0.12" color="#ffd98a" material="emissive: #ffb347; emissiveIntensity: 1.5"></a-sphere>
+    <a-entity light="type: point; intensity: .45; distance: 7; color: #ffc36b" position="-6 3.8 -3.2"></a-entity>
+    <a-entity light="type: point; intensity: .45; distance: 7; color: #ffc36b" position="0 3.8 -3.2"></a-entity>
+    <a-entity light="type: point; intensity: .45; distance: 7; color: #ffc36b" position="6 3.8 -3.2"></a-entity>
+  </a-entity>
+
+  <!-- Landscaping / vines / plants -->
+  <a-entity>
+    <a-cylinder position="-8.8 0.35 -6.5" radius="0.7" height="0.7" color="#5e5147"></a-cylinder>
+    <a-sphere position="-8.8 1.05 -6.5" radius="0.75" color="#2d5e33"></a-sphere>
+    <a-sphere position="-6.5 1.2 -9.0" radius="0.55" color="#295a2e"></a-sphere>
+    <a-sphere position="-4.7 1.4 -9.0" radius="0.75" color="#2f6b34"></a-sphere>
+    <a-sphere position="-1.5 1.3 -9.0" radius="0.65" color="#2d5e33"></a-sphere>
+    <a-sphere position="1.8 1.3 -9.0" radius="0.75" color="#2f6b34"></a-sphere>
+    <a-sphere position="4.5 1.2 -9.0" radius="0.55" color="#295a2e"></a-sphere>
+    <a-sphere position="9.2 1.1 2.8" radius="0.8" color="#2b5a32"></a-sphere>
+    <a-cylinder position="9.2 0.55 2.8" radius="0.5" height="0.7" color="#5e5147"></a-cylinder>
+  </a-entity>
+
+  <!-- Lounge area / firepit -->
+  <a-box position="0 0.35 7" width="5.8" height="0.25" depth="2.5" color="#6c472b"></a-box>
+  <a-box position="0 0.55 7" width="1.8" height="0.45" depth="1.2" color="#4d4035"></a-box>
+  <a-cone position="0 1.0 7" radius-bottom="0.35" radius-top="0.03" height="0.75" color="#ff7a18" material="emissive: #ff5a00; emissiveIntensity: .8"></a-cone>
+  <a-entity light="type: point; intensity: 1.5; distance: 8; color: #ff8b35" position="0 1.2 7"></a-entity>
+  <a-box position="-3.8 0.55 7" width="0.8" height="0.55" depth="3.2" color="#8c8177"></a-box>
+  <a-box position="3.8 0.55 7" width="0.8" height="0.55" depth="3.2" color="#8c8177"></a-box>
+
+  <!-- Dining table -->
+  <a-box mixin="wood" position="-2.3 0.72 2.6" width="5.2" height="0.18" depth="2.2"></a-box>
+  <a-box mixin="wood" position="-2.3 0.35 2.6" width="0.35" height="0.7" depth="0.35"></a-box>
+  <a-box position="-4.4 0.45 2.6" width="0.5" height="0.55" depth="1.8" color="#9c938b"></a-box>
+  <a-box position="-0.2 0.45 2.6" width="0.5" height="0.55" depth="1.8" color="#9c938b"></a-box>
+  <a-box position="-2.3 0.45 4.1" width="3.5" height="0.55" depth="0.5" color="#9c938b"></a-box>
+
+  <!-- Dimension/feature labels that float in VR -->
+  <a-text value="16 ft long arm: prep + Persian manghal + mini fridge + pizza oven"
+          position="-1.5 2.2 -5.85" align="center" color="#ffffff" width="7"></a-text>
+  <a-text value="14 ft short arm: sink + counter + 4 ft gas BBQ"
+          position="5.95 2.2 -1.3" rotation="0 -90 0" align="center" color="#ffffff" width="7"></a-text>
+  <a-text value="Niko Backyard VR - Walk Around This Design"
+          position="0 3.0 5.2" align="center" color="#ffffff" width="8"></a-text>
+
+  <!-- Player rig -->
+  <a-entity id="rig" position="0 1.6 3.6">
+    <a-camera wasd-controls="acceleration: 18" look-controls="pointerLockEnabled: true"></a-camera>
+    <a-entity oculus-touch-controls="hand: left"></a-entity>
+    <a-entity oculus-touch-controls="hand: right"></a-entity>
+  </a-entity>
+
+</a-scene>
+</body>
+</html>
